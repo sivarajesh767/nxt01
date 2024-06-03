@@ -40,14 +40,14 @@ const districtTable = dbObject => {
     districtName: dbObject.district_name,
     stateId: dbObject.state_id,
     cases: dbObject.cases,
-    curved: dbObject.curved,
+    cured: dbObject.cured,
     active: dbObject.active,
     deaths: dbObject.deaths,
   }
 }
 
 function authenticateToken(request, response, next) {
-  let jwtToken
+  let jwtToken;
   const authHeader = request.headers['authorization']
   if (authHeader !== undefined) {
     jwtToken = authHeader.split(' ')[1]
