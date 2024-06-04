@@ -48,6 +48,7 @@ const districtTable = dbObject => {
 
 function authenticateToken(request, response, next) {
   let jwtToken;
+  const MY_SECRET_TOKEN = 'MY_SECRET_TOKEN';
   const authHeader = request.headers['authorization']
   if (authHeader !== undefined) {
     jwtToken = authHeader.split(' ')[1]
